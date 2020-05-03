@@ -1,15 +1,17 @@
 ### Date created
-Include the date you created this project and README file.
+This project was started/created on April 16, 2020 and finished/submitted on April 23, 2020.
 
 ### Project Title
-Replace the Project Title
+Analyzing Bikeshare Statistics in Busy Cities in the United States
 
 ### Description
-Describe what your project is about and what it does
+This project calculates the most frequent times of travel, the most popular bike stations, the total trip duration, the average trip duration, and user data based on the input from the user.  
 
 ### Files used
-Include the files used
+chicago.csv
+new_york_city.csv
+washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+This helped me understand while loops better: https://www.tutorialspoint.com/python/python_while_loop.htm
+The mode function was used a couple of times in this project and this blog was useful in understanding the function: https://www.geeksforgeeks.org/python-statistics-mode-function/
