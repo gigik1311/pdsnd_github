@@ -8,9 +8,7 @@ Analyzing Bikeshare Statistics in Busy Cities in the United States
 This project calculates the most frequent times of travel, the most popular bike stations, the total trip duration, the average trip duration, and user data based on the input from the user.  
 
 ### Files used
-chicago.csv
-new_york_city.csv
-washington.csv
+chicago.csv, new_york_city.csv, washington.csv
 
 ### Credits
 This helped me understand while loops better: https://www.tutorialspoint.com/python/python_while_loop.htm
