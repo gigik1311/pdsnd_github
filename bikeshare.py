@@ -90,21 +90,41 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start = time.time()
     try:
+<<<<<<< HEAD
         # Gets the most popular month number and then the most popular month
         most_common_month_number = df['Start Time'].dt.month.mode()[0]
         most_common_month = df['month'].mode()[0]
+||||||| merged common ancestors
+        most_common_month_number = df['Start Time'].dt.month.mode()[0]
+        most_common_month = df['month'].mode()[0]
+=======
+        most_common_month_number = df['Start Time'].dt.month.value_counts().index[0]
+        most_common_month = df['month'].value_counts().index[0]
+>>>>>>> refactoring
         print('The month with the most travelers is {}'.format(most_common_month))
     except Exception as exception:
         print('Could not calculate the most popular month, as an error occured: {}'.format(exception))
     try:
+<<<<<<< HEAD
         # Gets the most popular day of the week
         most_common_day_of_week = df['day_of_week'].mode()[0]
+||||||| merged common ancestors
+        most_common_day_of_week = df['day_of_week'].mode()[0]
+=======
+        most_common_day_of_week = df['day_of_week'].value_counts().index[0]
+>>>>>>> refactoring
         print('The day of the week with the most travelers is {}.'.format(most_common_day_of_week))
     except Exception as exception:
         print('Could not calculate the most common day of the week, as an error occured: {}'.format(exception))
     try:
+<<<<<<< HEAD
         # Gets the most popular hour of the day
         most_common_hour = df['hour'].mode()[0]
+||||||| merged common ancestors
+        most_common_hour = df['hour'].mode()[0]
+=======
+        most_common_hour = df['hour'].value_counts().index[0]
+>>>>>>> refactoring
         print('The hour of the day with the most travelers is {}.'.format(most_common_hour))
     except Exception as exception:
         print('Could not calculate the most common start hour, as an error occured: {}'.format(exception))
@@ -117,14 +137,15 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
     # Gets the most common start station based on the user's input
-    most_common_start_station = df['Start Station'].mode()[0]
+    most_common_start_station = df['Start Station'].value_counts().index[0]
     print('The most common Start Station is {}.'.format(most_common_start_station))
     # Gets the most common end station based on the user's input
-    most_common_end_station = df['End Station'].mode()[0]
+    most_common_end_station = df['End Station'].value_counts().index[0]
     print('The most common End Station is {}.'.format(most_common_end_station))
     # Gets the most common start station/end station combination based on the user's input
-    most_frequent_combination = df[['Start Station', 'End Station']].mode().loc[0]
-    print('The most common Start Station/End Station combination is {}.'.format(most_frequent_combination))
+    df['Trip'] = df['Start Station'] + ' - ' + df['End Station']
+    most_common_trip = df['Trip'].value_counts().index[0]
+    print('The most common trip is {}.'.format(most_common_trip))
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -165,7 +186,7 @@ def user_stats(df):
         most_recent_year_of_birth = int(df['Birth Year'].max())
         print('The most recent birth year is {}.'.format(most_recent_year_of_birth))
         # Gets the most common birth year based on the user's input, except for Washington
-        most_common_year_of_birth = int(df['Birth Year'].mode()[0])
+        most_common_year_of_birth = int(df['Birth Year'].value_counts().index[0])
         print('The most common birth year is {}.'.format(most_common_year_of_birth))
     except:
         print('There is no birth year information for Washington.')
