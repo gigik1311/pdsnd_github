@@ -90,10 +90,8 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start = time.time()
     try:
-<<<<<<< HEAD
-        # Gets the most popular month number and then the most popular month
-        most_common_month_number = df['Start Time'].dt.month.mode()[0]
-        most_common_month = df['month'].mode()[0]
+        most_common_month_number = df['Start Time'].dt.month.value_counts().index[0]
+        most_common_month = df['month'].value_counts().index[0]
 ||||||| merged common ancestors
         most_common_month_number = df['Start Time'].dt.month.mode()[0]
         most_common_month = df['month'].mode()[0]
@@ -105,9 +103,7 @@ def time_stats(df):
     except Exception as exception:
         print('Could not calculate the most popular month, as an error occured: {}'.format(exception))
     try:
-<<<<<<< HEAD
-        # Gets the most popular day of the week
-        most_common_day_of_week = df['day_of_week'].mode()[0]
+        most_common_day_of_week = df['day_of_week'].value_counts().index[0]
 ||||||| merged common ancestors
         most_common_day_of_week = df['day_of_week'].mode()[0]
 =======
@@ -117,9 +113,7 @@ def time_stats(df):
     except Exception as exception:
         print('Could not calculate the most common day of the week, as an error occured: {}'.format(exception))
     try:
-<<<<<<< HEAD
-        # Gets the most popular hour of the day
-        most_common_hour = df['hour'].mode()[0]
+        most_common_hour = df['hour'].value_counts().index[0]
 ||||||| merged common ancestors
         most_common_hour = df['hour'].mode()[0]
 =======
